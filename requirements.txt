@@ -1,6 +1,13 @@
-jupyterlab==4.1.5
-matplotlib==3.8.4
+jupyterlab
+jupyter
+matplotlib
 numpy
 pandas
-scikit-learn==1.4.1.post1
-seaborn==0.13.2
+scikit-learn
+seaborn
+tensorflow
+tf_keras
+lime
+scikit-image
+xgboost
+innvestigate
