@@ -67,3 +67,29 @@ To validate your virtual env installation, and make sure you are able to run a s
 ### (Optional) Intro to ML Notebook
 
 As an example, you can also familiarize yourself with the Notebook we will use in our first lecture: `intro_ml.ipynb`
+
+## Notebook 1
+To get started with Notebook 1:
+
+**Note:** these instructions assume you've previously cloned the repository and set up your python environment per the above instructions. If not, return to the beginning of the README and follow the installation instructions.
+
+1. Update your local repository with `git pull`
+2. Activate your conda env (if not already activated): `conda activate sose24_xai_ac`
+3. Update your conda env with the latest python packages: `pip install -r requirements.txt`
+4. Download necessary models from Moodle, section [Jupyter Notebook #1](https://moodle.uni-bielefeld.de/course/view.php?id=4376#section-6).
+    - Extract files to the `models` folder in your local repository
+5. Launch Jupyter Lab: ```jupyter lab```
+6. Test importing tensorflow and other packages from the `requirements.txt` file
+	1. You can also test loading the tensorflow model:
+
+```python
+# make sure you've downloaded the models from Moodle 
+model_path = '../models/affectnet_model_e=60/affectnet_model'
+
+# load the weights
+model_xai = cnn_model(input_shape=(128, 128, 3), num_classes=8)
+model_xai.load_weights(model_path).expect_partial()
+```
+
+<!-- 6. Open the notebook called `notebooks/1. simplification_attribution.ipynb`
+7. Follow the instructions in the notebook -->
