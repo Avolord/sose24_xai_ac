@@ -81,7 +81,6 @@ To get started with Notebook 1:
 5. Launch Jupyter Lab: ```jupyter lab```
 6. Test importing tensorflow and other packages from the `requirements.txt` file
 	1. You can also test loading the tensorflow model:
-
 ```python
 # make sure you've downloaded the models from Moodle 
 model_path = '../models/affectnet_model_e=60/affectnet_model'
@@ -90,6 +89,5 @@ model_path = '../models/affectnet_model_e=60/affectnet_model'
 model_xai = cnn_model(input_shape=(128, 128, 3), num_classes=8)
 model_xai.load_weights(model_path).expect_partial()
 ```
-
-<!-- 6. Open the notebook called `notebooks/1. simplification_attribution.ipynb`
-7. Follow the instructions in the notebook -->
+7. Open the notebook called `notebooks/1. simplification_attribution.ipynb`
+8. Follow the instructions in the notebook
