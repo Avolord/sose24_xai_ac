@@ -100,7 +100,7 @@ To get started with Notebook 2:
 1. Update your local repository with `git pull`
 2. Activate your conda env (if not already activated): `conda activate sose24_xai_ac`
 3. Update your conda env with the latest python packages: `pip install -r requirements.txt`
-4. Download necessary models from Moodle, section [Jupyter Notebook #1](https://moodle.uni-bielefeld.de/course/view.php?id=4376#section-6).
+4. Download necessary models from Moodle, section [Jupyter Notebook #2](https://moodle.uni-bielefeld.de/course/view.php?id=4376#section-12).
     - Extract files to the `models` folder in your local repository
 5. Launch Jupyter Lab: ```jupyter lab```
 6. In this session, I've created two notebooks to make each task easier to manage
