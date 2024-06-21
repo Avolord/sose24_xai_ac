@@ -71,3 +71,33 @@ def create_bn_replacment(layers, idx):
  
     layers[idx] = BN_Inference(gamma=gamma, beta=beta, epsilon=eps, moving_mean=mean, moving_var=var)
     return layers
+
+
+
+def get_simplenet(input_shape, output_shape):
+    '''
+    Model for speech emotion recognition using a simple CNN
+    :param input_shape:
+    :param output_shape:
+    :return: model
+    '''
+
+    model = tf.keras.models.Sequential([
+        tf.keras.layers.Input(input_shape),
+        tf.keras.layers.Conv2D(32, kernel_size=(3, 3), activation="relu"),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        tf.keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu"),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        tf.keras.layers.Conv2D(128, kernel_size=(3, 3), activation="relu"),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dropout(0.5),
+        tf.keras.layers.Dense(1024, activation="relu"),
+        tf.keras.layers.Dropout(0.5),
+        tf.keras.layers.Dense(output_shape, activation="softmax"),
+    ])
+
+    return model

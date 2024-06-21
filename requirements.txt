@@ -5,9 +5,13 @@ numpy
 pandas
 scikit-learn
 seaborn
-tensorflow
+tensorflow==2.15.1
 tf_keras
 lime
 scikit-image
 xgboost
 innvestigate
+opencv-python==4.8.0.76
+shap
+dice-ml
+librosagit

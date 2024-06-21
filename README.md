@@ -91,3 +91,22 @@ model_xai.load_weights(model_path).expect_partial()
 ```
 7. Open the notebook called `notebooks/1. simplification_attribution.ipynb`
 8. Follow the instructions in the notebook
+
+## Notebook 2
+To get started with Notebook 2:
+
+**Note:** these instructions assume you've previously cloned the repository and set up your python environment per the above instructions. If not, return to the beginning of the README and follow the installation instructions.
+
+1. Update your local repository with `git pull`
+2. Activate your conda env (if not already activated): `conda activate sose24_xai_ac`
+3. Update your conda env with the latest python packages: `pip install -r requirements.txt`
+4. Download necessary models from Moodle, section [Jupyter Notebook #1](https://moodle.uni-bielefeld.de/course/view.php?id=4376#section-6).
+    - Extract files to the `models` folder in your local repository
+5. Launch Jupyter Lab: ```jupyter lab```
+6. In this session, I've created two notebooks to make each task easier to manage
+   - Notebook 2 Part 1: `notebooks/2.1 dice_cfs_ser.ipynb`
+   - Notebook 2 Part 1: `notebooks/2.2 shap_attribution_ser.ipynb`
+7. Open each notebook and ensure you can successfully run the imports statements
+   - If not, try recreating your conda environment
+   - Email me for support
+7. Follow the instructions in the notebook to complete the tasks
