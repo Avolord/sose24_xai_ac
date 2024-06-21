@@ -6,6 +6,16 @@ from matplotlib.colors import LinearSegmentedColormap
 
 LABELS = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fear', 'disgust', 'surprise']
 def plot_shap_spec(shap_values, spec, sr, pred, true, shap_idx=None):
+  """
+  Function to plot the SHAP values for one spectrogram and one prediction label.
+  :param shap_values: array of shap values to plot
+  :param spec: original spectrogram of audio file
+  :param sr: sampling rate
+  :param pred: prediction label
+  :param true: ground truth label
+  :param shap_idx: index of the prediction index to display shap values for.
+         Leave as None to plot the shap values for the top prediction.
+  """
 
   figsize = [9, 2.5]
 
@@ -33,13 +43,13 @@ def plot_shap_spec(shap_values, spec, sr, pred, true, shap_idx=None):
   shap_idx = shap_idx if shap_idx is not None else pred_idx
   sv = np.mean(shap_values[:, :, :, pred_idx], axis=-1) # aggregate the channels
   lim = max(abs(sv.min()), abs(sv.max()))
-
   librosa.display.specshow(spec, sr=sr, x_axis='time', y_axis='mel', cmap = 'Greys_r', ax=axes[1], alpha=0.20)
   im = librosa.display.specshow(sv*2, sr=sr, x_axis='time', y_axis='mel', cmap = shap_cmap, ax=axes[1], vmin=-lim, vmax=lim)
   axes[1].set_title(f'Shap Values: {LABELS[shap_idx]}')
   axes[1].set_yticks([])
   axes[1].set_ylabel('')
 
+  # setup colorbar
   width = 0.725
   left = (1 - width) / 2 + .01
   cax = fig.add_axes([left, -0.1, width, 0.03])  # [left, bottom, width, height]
